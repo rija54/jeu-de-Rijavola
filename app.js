@@ -2,6 +2,15 @@ var perso = document.querySelector(".perso");
 var obstacles = document.querySelector(".obstacles");
 var scoreElement = document.getElementById("score"); // Mieux de cibler par ID pour le score
 var scoreValue = 0;
+document.getElementById("startbtn").addEventListener("click", function(e) {
+    e.preventDefault(); // Empêche le comportement par défaut du bouton
+    obstacles.style.animation = "none";
+    obstacles.style.left = "560px";
+    setTimeout(function() {
+        obstacles.style.animation = "anime-obstacles 2s linear infinite";
+    }, 3000); // Court délai pour s'assurer que le style "none" a bien été appliqué
+     // Positionne l'obstacle à la droite de l'écran
+});
 
 // La variable `dejaCompte` doit être gérée par cycle d'obstacle
 // Elle doit être à `false` quand l'obstacle apparaît (ou redémarre son animation)
