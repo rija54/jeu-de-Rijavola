@@ -1,0 +1,170 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&family=Roboto&display=swap');
+* {
+    margin: 0;  
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+}
+
+.jeu{display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    background-color: rgb(8, 38, 67);
+    border-radius: 16px;       /* Optionnel : coins arrondis */
+    box-shadow: 0 4px 16px rgba(0,0,0,0.08); /* Optionnel : ombre légère */
+    width: 600px;              /* Largeur fixe ou adapte selon ton besoin */
+    height: 300px;             /* Hauteur fixe ou adapte selon ton besoin */
+    margin: 40px auto;         /* Centre la zone de jeu horizontalement */
+    position: relative;
+    z-index: 1;
+    border: 1px solid #140d0d; /* Optionnel : bordure pour mieux visualiser la zone de jeu */
+    overflow: hidden;
+    
+    border-bottom: 1px solid #140d0d;
+
+
+
+
+
+}body {
+    display: block;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-image: url('galaxy.jpg'); /* ou espace.jpg */
+    background-size: cover;
+    /*background-position: center;
+    background-repeat: no-repeat;*/
+   
+}.superman{
+    width: 100px;
+    height: 100px;
+    margin-left: 0;
+}.perso{
+    margin-left:0;
+    height: 50px;
+
+    width: 20px;
+    position: relative;
+    top: 10px;
+    object-fit: cover;
+
+
+}.animation{
+    animation: saut-perso 500ms infinite;
+}
+.control{
+    align-items: center;
+    margin-top: 20px;
+    text-align: center;
+    
+
+}
+.perso img{
+    
+    object-fit: cover;
+
+
+
+}.sol{
+
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 16px;           /* Épaisseur de la "terre" */
+    background: #2ecc40;    /* Vert ou la couleur de ton choix */
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+    z-index: 2;
+}.obstacles{
+    width: 40px;
+    height: 40px;
+   /* background-image: url("rahona.png");*/
+    background-color: #017179;
+    position: absolute;
+    top: 150px;
+    left: 560px;
+    border-radius: 50%;
+    background-size: cover;
+    background-position: center;
+    animation: anime-obstacles 2s linear infinite;
+  
+
+
+}a,button{
+    padding: 10px 50px;
+    border-radius: 4px;
+    border: 0;
+    box-shadow: 0 0 50px;
+    font-weight: pointer;
+    background-color: #fff;
+    font-size: 15px;
+    text-decoration: dashed;
+    color: #140d0d;
+    cursor: pointer;
+
+    
+
+
+
+
+}
+@keyframes saut-perso{
+    0%{
+        top: 30px;
+
+    }
+    25%{
+        top: -70px;
+
+    }
+    50%{
+        top: -70px;
+
+
+    }
+    100%{
+
+        top: 30px;
+
+    }
+
+
+
+}
+
+
+@keyframes anime-obstacles {
+    0%{
+        left: 1500px;
+
+    }
+    100%{
+        left: -100px;
+
+    }/*
+    50%{
+        top: 80px;
+
+
+    }
+    100%{
+
+        top: 100px;
+
+    }*/
+
+
+}#score{
+    position: relative;
+    top: 03px;
+    left: 10px;
+    color: #a03030;
+    font-size: 20px;
+    z-index: 3; /* Assure que le score est au-dessus des autres éléments */
+    border-radius: 50%;
+    text-align: center;
+    
+    padding: 10px 0;
+    
+}
